@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import AuthPage from "./components/AuthPage/AuthPage";
 import AddJog from "./components/AddJog/AddJog";
 import Info from "./components/Info/Info";
+import JogsIsMissing from "./components/JogsIsMissing/JogsIsMissing";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <div className={'mainContent'}>
             {/*<AuthPage/>*/}
             {/*<AddJog/>*/}
-            <Info/>
+            {/*<Info/>*/}
+            <JogsIsMissing/>
         </div>
     </div>
   );
