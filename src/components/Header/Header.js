@@ -4,10 +4,19 @@ import logo from '../../common/img/logo.png'
 import filter from '../../common/img/filter.png'
 import activeFilter from '../../common/img/filter-active.png'
 import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {switchFilter} from "../../store/filterReducer";
 
 const Header = () => {
 
+    const dispatch = useDispatch()
+
     const [isFilter, setIsFilter] = useState(false)
+
+    const onClickHandler = () =>{
+        setIsFilter(!isFilter)
+        dispatch(switchFilter(!isFilter))
+    }
 
     return (
         <header className={style.appHeader}>
@@ -29,7 +38,7 @@ const Header = () => {
                 <h2>Contact Us</h2>
                 <img src={isFilter ? activeFilter : filter}
                      alt={'filter'}
-                     onClick={()=> setIsFilter(!isFilter)}/>
+                     onClick={onClickHandler}/>
             </div>
         </header>
     );

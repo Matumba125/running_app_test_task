@@ -1,11 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Jog from "./Jog/Jog";
 import style from './Jogs.module.css'
 import FilterField from "./FilterField/FilterField";
 import addJog from '../../common/img/add.png'
 import {NavLink} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const Jogs = () => {
+
+    const filterStat = useSelector(state => state.filter.filterStatus)
+
+    useEffect(()=>{
+        setFilter(filterStat)
+    },[filterStat])
 
     const [filter, setFilter] = useState(false)
 
@@ -37,6 +44,41 @@ const Jogs = () => {
             "distance": 45,
             "time": 34,
             "date": 1056499200
+        },
+        {
+            "id": 3789,
+            "user_id": "3",
+            "distance": 64,
+            "time": 43,
+            "date": 1607731200
+        },
+        {
+            "id": 3790,
+            "user_id": "3",
+            "distance": 87,
+            "time": 54,
+            "date": 1607731200
+        },
+        {
+            "id": 3791,
+            "user_id": "3",
+            "distance": 37,
+            "time": 37,
+            "date": 1607731200
+        },
+        {
+            "id": 3792,
+            "user_id": "3",
+            "distance": 53,
+            "time": 3737,
+            "date": 1607731200
+        },
+        {
+            "id": 3793,
+            "user_id": "3",
+            "distance": 15,
+            "time": 60,
+            "date": 1630454400
         }
     ]
 
