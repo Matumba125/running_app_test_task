@@ -1,0 +1,22 @@
+.filterWrapper{
+    width: 100%;
+    height: 60px;
+    background: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterItem{
+    display: flex;
+    align-items: center;
+}
+
+.filterItem input{
+    outline: none;
+    width: 100px;
+    height: 31px;
+    margin: 0 45px 0 15px;
+    border-radius: 11px;
+    border: solid 1px #979797;
+}

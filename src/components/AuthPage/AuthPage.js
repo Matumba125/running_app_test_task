@@ -6,7 +6,7 @@ const AuthPage = () => {
     return (
         <div className={style.container}>
             <div className={style.authWrapper}>
-                <img src={bearFace} className={style.bearFace}/>
+                <img src={bearFace} className={style.bearFace} alt={'bearFace'}/>
                 <button className={style.loginButton}>
                     <span className={style.letMeIn}>Let me in</span>
                 </button>

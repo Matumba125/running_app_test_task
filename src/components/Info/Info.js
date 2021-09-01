@@ -3,7 +3,7 @@ import style from './Info.module.css'
 
 const Info = () => {
     return (
-        <div className={style.infoContainer}>
+        <div id={'info'} className={style.infoContainer}>
             <h2 className={style.header}>INFO</h2>
             <div className={style.paragraphContainer}>
                 <p>

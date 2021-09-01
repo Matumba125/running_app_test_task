@@ -7,7 +7,7 @@ const AddJog = () => {
         <div className={style.container}>
             <div className={style.addJogWrapper}>
                 <div className={style.cancelWrapper}>
-                    <img src={cancel} className={style.cancel}/>
+                    <img src={cancel} alt={'cancel'}/>
                 </div>
                 <div className={style.inputWrapper}>
                     <div className={style.inputItem}>

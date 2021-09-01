@@ -6,7 +6,7 @@ const JogsIsMissing = () => {
     return (
         <div className={style.jogIsMissingWrapper}>
             <div className={style.errorMessageWrapper}>
-                <img src={errorImage}/>
+                <img src={errorImage} alt={'errorMessage'}/>
                 <span>Nothing is there</span>
             </div>
             <button className={style.createJogBtn}>

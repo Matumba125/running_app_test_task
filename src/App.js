@@ -1,22 +1,25 @@
-import './App.css';
+import './App.module.css';
 import Header from "./components/Header/Header";
-import AuthPage from "./components/AuthPage/AuthPage";
-import AddJog from "./components/AddJog/AddJog";
 import Info from "./components/Info/Info";
-import JogsIsMissing from "./components/JogsIsMissing/JogsIsMissing";
+import Jogs from "./components/Jogs/Jogs";
+import {Route} from 'react-router-dom'
+import AddJog from "./components/AddJog/AddJog";
+import style from './App.module.css'
 
 function App() {
-  return (
-    <div className="App">
-        <Header/>
-        <div className={'mainContent'}>
-            {/*<AuthPage/>*/}
-            {/*<AddJog/>*/}
-            {/*<Info/>*/}
-            <JogsIsMissing/>
+    return (
+        <div className={style.App}>
+            <Header/>
+            <div className={style.mainContent}>
+                {/*<AuthPage/>*/}
+                {/*<AddJog/>*/}
+                {/*<JogsIsMissing/>*/}
+                <Route path={"/test/jogs"} render={() => <Jogs/>}/>
+                <Route path={"/test/info"} render={() => <Info/>}/>
+                <Route path={"/test/add-jog"} render={() => <AddJog/>}/>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;
