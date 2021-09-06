@@ -1,4 +1,4 @@
-.appHeader{
+.appHeader {
     width: 100%;
     height: 116px;
     background-color: #7ed321;
@@ -17,29 +17,29 @@
     object-fit: contain;
 }
 
-.navBlock{
+.navBlock {
     display: flex;
     min-width: 20%;
     justify-content: space-between;
     align-items: center;
 }
 
-.navBlock h2{
+.navBlock h2 {
     font-size: 14px;
     text-transform: uppercase;
     color: white;
 }
 
-.link{
+.link {
     text-decoration: none;
 }
 
-.activeLink{
+.activeLink {
     position: relative;
     text-decoration: none;
 }
 
-.activeLink::before{
+.activeLink::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -48,12 +48,12 @@
     top: 70%;
 }
 
-.navBlock img{
+.navBlock img {
     width: 26px;
     height: 26px;
 }
 
-.link{
+.link {
     text-decoration: none;
     color: white;
 }

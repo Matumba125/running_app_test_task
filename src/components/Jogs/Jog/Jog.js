@@ -4,17 +4,21 @@ import icon from '../../../common/img/icon.png'
 
 const Jog = (props) => {
 
-    const date = new Date(props.date*1000)
-    const day =('0' + date.getDate()).slice(-2);
-    const month = ('0' + (date.getMonth()+1)).slice(-2);
+    const date = new Date(props.date * 1000)
+    const day = ('0' + date.getDate()).slice(-2);
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
     const year = date.getFullYear();
 
+    const onDoubleClickHandler = () => {
+        props.onDoubleClick(props.distance, props.time, props.jogId, props.userId, date)
+    }
+
     return (
-        <div className={style.jogWrapper}>
+        <div className={style.jogWrapper} onDoubleClick={onDoubleClickHandler}>
             <img src={icon} alt={'icon'}/>
             <div className={style.jogInfo}>
-                <span className={style.propsData} style={{fontWeight:'normal'}}>{`${day}.${month}.${year}`}</span>
-                <span>Speed:  <span className={style.propsData}>{(props.distance/props.time).toFixed(1)}</span></span>
+                <span className={style.propsData} style={{fontWeight: 'normal'}}>{`${day}.${month}.${year}`}</span>
+                <span>Speed:  <span className={style.propsData}>{(props.distance / (props.time / 60)).toFixed(1)}</span></span>
                 <span>Distance:  <span className={style.propsData}>{props.distance} km</span></span>
                 <span>Time: <span className={style.propsData}>{props.time} min</span></span>
             </div>

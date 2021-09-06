@@ -5,7 +5,7 @@ import filter from '../../common/img/filter.png'
 import activeFilter from '../../common/img/filter-active.png'
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {switchFilter} from "../../store/filterReducer";
+import {switchFilter} from "../../store/appReducer";
 
 const Header = () => {
 
@@ -13,7 +13,7 @@ const Header = () => {
 
     const [isFilter, setIsFilter] = useState(false)
 
-    const onClickHandler = () =>{
+    const onClickHandler = () => {
         setIsFilter(!isFilter)
         dispatch(switchFilter(!isFilter))
     }
@@ -31,8 +31,8 @@ const Header = () => {
                     <h2>Jogs</h2>
                 </NavLink>
                 <NavLink className={style.link}
-                    activeClassName={style.activeLink}
-                             to={'/test/info'}>
+                         activeClassName={style.activeLink}
+                         to={'/test/info'}>
                     <h2>Info</h2>
                 </NavLink>
                 <h2>Contact Us</h2>

@@ -1,11 +1,11 @@
-.infoContainer{
+.infoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 35%;
 }
 
-.header{
+.header {
     width: 100%;
     text-align: left;
     font-size: 36px;
@@ -13,9 +13,10 @@
     color: #7ed321;
 }
 
-.paragraphContainer{}
+.paragraphContainer {
+}
 
-.paragraphContainer p{
+.paragraphContainer p {
     margin-bottom: 30px;
     font-size: 14px;
     line-height: 1.71;

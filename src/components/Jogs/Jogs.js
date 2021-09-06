@@ -3,108 +3,90 @@ import Jog from "./Jog/Jog";
 import style from './Jogs.module.css'
 import FilterField from "./FilterField/FilterField";
 import addJog from '../../common/img/add.png'
-import {NavLink} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import EditJog from "../EditJog/EditJog";
+import {setAddMode, setEditMode} from "../../store/appReducer";
+import {getJogsTC} from "../../store/jogReducer";
 
 const Jogs = () => {
 
-    const filterStat = useSelector(state => state.filter.filterStatus)
+        const filterStat = useSelector(state => state.app.filterStatus)
+        const editMode = useSelector(state => state.app.editMode)
+        const addMode = useSelector(state => state.app.addMode)
+        const jogs = useSelector(state => state.jogs.jogs)
 
-    useEffect(()=>{
-        setFilter(filterStat)
-    },[filterStat])
+        const dispatch = useDispatch()
 
-    const [filter, setFilter] = useState(false)
+        const [jogDistance, setJogDistance] = useState(0)
+        const [jogTime, setJogTime] = useState(0)
+        const [currentJogId, setCurrentJogId] = useState(0)
+        const [userId, setUserId] = useState(0)
+        const [jogDate, setJogDate] = useState(0)
 
-    const jogs = [
-        {
-            "id": 3092,
-            "user_id": "3",
-            "distance": 98,
-            "time": 57,
-            "date": 0
-        },
-        {
-            "id": 3093,
-            "user_id": "3",
-            "distance": 55,
-            "time": 4,
-            "date": 1088035200
-        },
-        {
-            "id": 3094,
-            "user_id": "3",
-            "distance": 54,
-            "time": 4,
-            "date": 1053388800
-        },
-        {
-            "id": 3095,
-            "user_id": "3",
-            "distance": 45,
-            "time": 34,
-            "date": 1056499200
-        },
-        {
-            "id": 3789,
-            "user_id": "3",
-            "distance": 64,
-            "time": 43,
-            "date": 1607731200
-        },
-        {
-            "id": 3790,
-            "user_id": "3",
-            "distance": 87,
-            "time": 54,
-            "date": 1607731200
-        },
-        {
-            "id": 3791,
-            "user_id": "3",
-            "distance": 37,
-            "time": 37,
-            "date": 1607731200
-        },
-        {
-            "id": 3792,
-            "user_id": "3",
-            "distance": 53,
-            "time": 3737,
-            "date": 1607731200
-        },
-        {
-            "id": 3793,
-            "user_id": "3",
-            "distance": 15,
-            "time": 60,
-            "date": 1630454400
+        const onDoubleClickHandler = (distance, time, jogId, userId, jogDate) => {
+            setJogDistance(distance)
+            setJogTime(time)
+            setCurrentJogId(jogId)
+            setUserId(userId)
+            setJogDate(jogDate)
+            dispatch(setEditMode(!editMode))
         }
-    ]
 
-    return (
-        <div className={style.jogsWithFilterWrapper}>
-            {filter ?
-                <FilterField/> : ''
+        const onClickHandler = () => {
+            dispatch(setAddMode(!addMode))
+        }
+
+        useEffect(() => {
+            dispatch(getJogsTC())
+        }, [])
+
+        useEffect(() => {
+        }, [filterStat, editMode, addMode, jogs])
+
+        const renderElement = () => {
+            if (editMode) {
+                return <EditJog editing={true}
+                                distance={jogDistance}
+                                time={jogTime}
+                                jogId={currentJogId}
+                                userId={userId}
+                                jogDate={jogDate}
+                />
+            } else if (addMode) {
+                return <EditJog editing={false}/>
+            } else {
+                return (
+                    <div>
+                        {
+                            filterStat ?
+                                <FilterField/> : ''
+                        }
+                        <div className={style.jogsWrapper}>
+                            {jogs.map(m =>
+                                <Jog key={m.id}
+                                     date={m.date}
+                                     time={m.time}
+                                     distance={m.distance}
+                                     jogId={m.id}
+                                     userId={m.user_id}
+                                     onDoubleClick={onDoubleClickHandler}
+                                />
+                            )}
+                        </div>
+                        <div className={style.addJogBtn} onClick={onClickHandler}>
+                            <img src={addJog} alt={'add'}/>
+                        </div>
+                    </div>
+                )
             }
-            <div className={style.jogsWrapper}>
-                {jogs.map(m =>
-                    <Jog key={m.id}
-                         date={m.date}
-                         time={m.time}
-                         distance={m.distance}
-                         userId={m.user_id}
-                         jogId={m.id}
-                    />
-                )}
+        }
+
+        return (
+            <div id={'hello'} className={style.jogsWithFilterWrapper}>
+                {renderElement()}
             </div>
-            <div className={style.addJogBtn}>
-                <NavLink to={'/test/add-jog'}>
-                    <img src={addJog} alt={'add'}/>
-                </NavLink>
-            </div>
-        </div>
-    );
-};
+        )
+    }
+;
 
 export default Jogs;

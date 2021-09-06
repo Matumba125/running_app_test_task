@@ -1,16 +1,16 @@
-.jogsWithFilterWrapper{
+.jogsWithFilterWrapper {
     width: 100%;
     height: 100%;
 }
 
-.jogsWrapper{
+.jogsWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.addJogBtn{
+.addJogBtn {
     position: fixed;
     width: 100%;
     display: flex;

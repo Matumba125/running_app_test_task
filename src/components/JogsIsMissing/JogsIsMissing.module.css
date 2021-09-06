@@ -1,4 +1,4 @@
-.jogIsMissingWrapper{
+.jogIsMissingWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     min-height: 425px;
 }
 
-.errorMessageWrapper{
+.errorMessageWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,13 +14,13 @@
     min-height: 222px;
 }
 
-.errorMessageWrapper span{
+.errorMessageWrapper span {
     font-size: 24px;
     line-height: 1.21;
     color: #b0b0b0;
 }
 
-.createJogBtn{
+.createJogBtn {
     width: 249px;
     height: 60px;
     padding: 20px 33px 19px 34px;
@@ -30,8 +30,8 @@
     border: solid 3px #e990f9;
 }
 
-.createJogBtn span{
-    color: #e990f9 ;
+.createJogBtn span {
+    color: #e990f9;
     font-size: 18px;
     font-weight: bold;
 }
