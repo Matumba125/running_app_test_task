@@ -57,7 +57,6 @@ export const getJogsTC = () =>
         JogAPI.getJogs()
             .then((jogs) => {
                 dispatch(getJogsAC(jogs))
-                debugger
             })
     }
 

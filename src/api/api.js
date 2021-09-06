@@ -20,7 +20,7 @@ const instance = axios.create({
 
 export const JogAPI = {
     getJogs: () => {
-        return instance.get('data/sync?count=100').then((response) => response.data.response.jogs)
+        return instance.get('data/sync').then((response) => response.data.response.jogs)
     },
     addJog: (date, time, distance) => {
         return instance.post('data/jog', `date=${date}&time=${time}&distance=${distance}`)

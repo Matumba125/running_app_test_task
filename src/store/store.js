@@ -1,6 +1,6 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from "redux-thunk"
-import appReducer from "./appReducer";
+import appReducer, {setMobileModeAC} from "./appReducer";
 import {jogReducer} from "./jogReducer";
 import {authReducer} from "./authReducer";
 

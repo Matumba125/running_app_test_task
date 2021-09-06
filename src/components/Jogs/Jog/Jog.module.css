@@ -25,3 +25,11 @@
     color: #979797;
     font-weight: 500;
 }
+
+@media screen and (max-width: 1000px){
+    .jogWrapper{
+        width: 100%;
+        border-bottom: 1px solid #979797;
+        justify-content: center;
+    }
+}

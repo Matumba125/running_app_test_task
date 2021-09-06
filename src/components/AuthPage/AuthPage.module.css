@@ -32,7 +32,7 @@ img .bearFace {
 
 .loginButton {
     height: 60px;
-    margin: 56px 5px 0 4px;
+    margin: 56px 5px;
     padding: 20px 34px 19px;
     border-radius: 36px;
     border: solid 3px #fff;
@@ -45,4 +45,19 @@ img .bearFace {
     font-weight: bold;
     font-family: Roboto, Helvetica, sans-serif;
     color: #ffffff;
+}
+
+@media screen and (max-width: 1000px) {
+    .authWrapper {
+        width: 90%;
+        background: none;
+    }
+
+    .loginButton {
+        border: solid 3px #e990f9;
+    }
+
+    .letMeIn {
+        color: #e990f9;
+    }
 }

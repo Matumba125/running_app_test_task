@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './JogsIsMissing.module.css'
 import errorImage from '../../common/img/sad-rounded-square-emoticon.png'
+import {NavLink} from "react-router-dom";
 
 const JogsIsMissing = () => {
     return (
@@ -9,9 +10,9 @@ const JogsIsMissing = () => {
                 <img src={errorImage} alt={'errorMessage'}/>
                 <span>Nothing is there</span>
             </div>
-            <button className={style.createJogBtn}>
+            <NavLink to={'/test/add-jog'} className={style.createJogBtn}>
                 <span>Create your jog first</span>
-            </button>
+            </NavLink>
         </div>
     );
 };
