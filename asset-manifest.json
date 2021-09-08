@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/running_app_test_task/static/css/main.df3f8eb0.chunk.css",
+    "main.js": "/running_app_test_task/static/js/main.7cc42ac3.chunk.js",
+    "main.js.map": "/running_app_test_task/static/js/main.7cc42ac3.chunk.js.map",
+    "runtime-main.js": "/running_app_test_task/static/js/runtime-main.dc696cd3.js",
+    "runtime-main.js.map": "/running_app_test_task/static/js/runtime-main.dc696cd3.js.map",
+    "static/js/2.1235d9d4.chunk.js": "/running_app_test_task/static/js/2.1235d9d4.chunk.js",
+    "static/js/2.1235d9d4.chunk.js.map": "/running_app_test_task/static/js/2.1235d9d4.chunk.js.map",
+    "static/js/3.f13c8035.chunk.js": "/running_app_test_task/static/js/3.f13c8035.chunk.js",
+    "static/js/3.f13c8035.chunk.js.map": "/running_app_test_task/static/js/3.f13c8035.chunk.js.map",
+    "index.html": "/running_app_test_task/index.html",
+    "static/css/main.df3f8eb0.chunk.css.map": "/running_app_test_task/static/css/main.df3f8eb0.chunk.css.map",
+    "static/js/2.1235d9d4.chunk.js.LICENSE.txt": "/running_app_test_task/static/js/2.1235d9d4.chunk.js.LICENSE.txt",
+    "static/media/bear-face.8ad3ae8e.png": "/running_app_test_task/static/media/bear-face.8ad3ae8e.png",
+    "static/media/cancelMobile.09df7714.svg": "/running_app_test_task/static/media/cancelMobile.09df7714.svg",
+    "static/media/mobileBearFace.65f32a0e.png": "/running_app_test_task/static/media/mobileBearFace.65f32a0e.png",
+    "static/media/sad-rounded-square-emoticon.991809c0.png": "/running_app_test_task/static/media/sad-rounded-square-emoticon.991809c0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dc696cd3.js",
+    "static/js/2.1235d9d4.chunk.js",
+    "static/css/main.df3f8eb0.chunk.css",
+    "static/js/main.7cc42ac3.chunk.js"
+  ]
+}
