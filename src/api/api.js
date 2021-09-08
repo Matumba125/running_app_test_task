@@ -16,6 +16,15 @@ const instance = axios.create({
 
     }
 })
+const testingInstance = axios.create({
+    baseURL: "https://jogtracker.herokuapp.com/api/v1/",
+    withCredentials: true,
+    headers: {
+        'Authorization': `Bearer eb8cdf9e61521369da24ab55f0095f5da870881990d9b75daefef50333178daf`,
+        'Content-Type': 'application/x-www-form-urlencoded'
+
+    }
+})
 
 
 export const JogAPI = {
@@ -33,5 +42,20 @@ export const JogAPI = {
 export const AuthAPI = {
     getToken: (hello) => {
         return axios.post(`https://jogtracker.herokuapp.com/api/v1/auth/uuidLogin`, `uuid=${hello}`);
+    }
+}
+
+export const SwaggerTestAPI ={
+    testingGet:()=>{
+        return testingInstance.get('/test/echo')
+    },
+    testingPut:()=>{
+        return testingInstance.put('/test/echo')
+    },
+    testingPost:()=>{
+        return testingInstance.post('/test/echo')
+    },
+    testingDelete:()=>{
+        return testingInstance.delete('/test/echo')
     }
 }

@@ -31,12 +31,14 @@ img .bearFace {
 }
 
 .loginButton {
+    text-decoration: none;
     height: 60px;
     margin: 56px 5px;
     padding: 20px 34px 19px;
     border-radius: 36px;
     border: solid 3px #fff;
     background: transparent;
+    box-sizing: border-box;
 }
 
 .letMeIn {

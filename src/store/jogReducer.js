@@ -1,4 +1,4 @@
-import {JogAPI} from "../api/api";
+import {JogAPI, SwaggerTestAPI} from "../api/api";
 
 const GET_JOGS = 'JOGS/GET-JOGS'
 const FILTER_JOGS = 'JOGS/FILTER-JOGS'
@@ -62,6 +62,7 @@ export const getJogsTC = () =>
 
 export const addJogTC = (date, time, distance) =>
     (dispatch) => {
+
         JogAPI.addJog(date, time, distance)
             .then((res) => {
                 dispatch(getJogsTC())
