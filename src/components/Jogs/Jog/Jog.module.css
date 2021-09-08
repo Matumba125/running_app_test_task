@@ -6,8 +6,11 @@
     margin: 40px;
 }
 
+.jogWrapper img{
+    margin-right: 60px;
+}
+
 .jogInfo {
-    margin-left: 60px;
     min-height: 100px;
     display: flex;
     flex-direction: column;

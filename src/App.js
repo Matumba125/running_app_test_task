@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from "react-redux";
 import EditJog from "./components/EditJog/EditJog";
 import {setMobileModeAC} from "./store/appReducer";
 import MobileMenu from "./components/MobileMenu/MobileMenu";
+import JogsIsMissing from "./components/JogsIsMissing/JogsIsMissing";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     const isAuth = useSelector(state => state.auth.isAuth)
     const mobileMode = useSelector(state => state.app.mobileMode)
     const mobileMenu = useSelector(state => state.app.mobileMenu)
+    const jogs = useSelector(state => state.jogs.jogs)
 
     useEffect(() => {
     }, [isAuth, mobileMode, mobileMenu])
@@ -31,6 +33,20 @@ function App() {
     useEffect(() => {
         setMobileMode()
     }, [])
+
+
+    const renderFunc = () => {
+        if (jogs !== []) {
+            return <div className={style.mainContent}>
+                <Route path={"/test/jogs"} render={() => <Jogs/>}/>
+                <Route path={"/test/info"} render={() => <Info/>}/>
+                <Route path={"/test/add-jog"} render={() => <EditJog/>}/>
+            </div>
+        } else {
+            return <JogsIsMissing/>
+        }
+    }
+
 
     return (
 
@@ -45,14 +61,7 @@ function App() {
                             <AuthPage/>
                         </div>
                         :
-                        <div className={style.mainContent}>
-                            {/*<AuthPage/>*/}
-                            {/*<AddJog/>*/}
-                            {/*<JogsIsMissing/>*/}
-                            <Route path={"/test/jogs"} render={() => <Jogs/>}/>
-                            <Route path={"/test/info"} render={() => <Info/>}/>
-                            <Route path={"/test/add-jog"} render={() => <EditJog/>}/>
-                        </div>
+                        renderFunc()
                     }
                 </div>
             }
