@@ -76,20 +76,3 @@ export const editJogTC = (date, time, distance, jogId, userID) =>
             })
     }
 
-// export const AddJogTC = (distance, time, date) =>
-//     (dispatch, getState) => {
-//
-//         let newJog = {date: `${changeDate}`, time: time, distance: distance};
-//         let response = API.addNewJog(getTokenFromLocalStorage(), newJog);
-//
-//         let newItemOfJog = {
-//             id: response.id,
-//             user_id: getState().partOfTheState.currentUser.id,
-//             distance: distance,
-//             time: time,
-//             date: changeDate.getTime() / 1000,
-//         };
-//
-//         dispatch(addNewJogDataAC(newItemOfJog));
-//
-// };
